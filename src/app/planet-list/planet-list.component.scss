@@ -1,0 +1,31 @@
+.planets {
+	max-width: 700px;
+	margin: 30px auto 30px auto;
+
+	.planet {
+		border:1px solid #e8e8e8;
+		padding: 13px 0 13px 0;
+		
+		&__img {
+			max-width: 100%;
+			display: block;
+			margin-bottom: 10px;
+		}
+
+		&__status {
+			position: relative;
+
+			&--success {
+				color: green;
+			}
+
+			&--danger {
+				color:red;
+			}
+
+			&--default {
+				color: #ccccce;
+			}
+		}
+	}
+}

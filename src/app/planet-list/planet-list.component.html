@@ -1,0 +1,19 @@
+<div class="container planets">
+	<div class="planet row mt-2" *ngFor="let planet of planets" (click)="goToEdit(planet)">
+		<div class="col-3 text-center">
+			<img class="planet__img" src="assets/img/earth.png" alt="" />
+			<strong>{{planet.title}}</strong>
+		</div>
+		<div class="col-6">
+			{{planet.description}}
+		</div>
+		<div class="col-3 status" [ngClass]="{'planet__status--success':planet.status == 1,'planet__status--danger':planet.status == 2,'planet__status--default':planet.status == 3,'black':planet.status == 4}">
+			<div class="vertical-center">
+				<strong><span *ngIf="planet.status == 1">OK</span>
+				<span *ngIf="planet.status == 2">!OK</span>
+				<span *ngIf="planet.status == 3">En route</span>
+				<span *ngIf="planet.status == 4">TODO</span></strong>
+			</div>
+		</div>
+	</div>
+</div>

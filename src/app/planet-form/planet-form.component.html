@@ -1,0 +1,22 @@
+<div class="row" *ngIf="planet">
+	<div class="col-md-6">
+		<h2 class="mt-4">Planet {{planet?.title}}</h2>
+		<form class="mt-4" [formGroup]="editForm" (ngSubmit)="onSubmit()">
+			<div class="form-group">
+				<label for="status">Status:</label>
+				<select class="form-control" formControlName="status" id="status">
+					<option value="1">OK</option>
+					<option value="2">!OK</option>
+					<option value="3">En route</option>
+					<option value="4">TODO</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="description">Description:</label>
+				<textarea class="form-control" formControlName="description" id="description" autocomplete="off" rows="5"></textarea>
+			</div>
+			<button class="btn btn-success">Save</button>
+			<a routerLink="/planets" class="btn">Back</a>
+		</form>
+	</div>
+</div>
